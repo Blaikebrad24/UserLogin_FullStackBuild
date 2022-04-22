@@ -13,7 +13,7 @@ public class RegistrationController {
     private RegistrationService registrationService;
 
     @PostMapping
-    public String register(@RequestBody RegistrationRequest request){
+    public String register(@RequestBody RegistrationRequest request) throws IllegalAccessException {
         return registrationService.register(request);
     }
 }
