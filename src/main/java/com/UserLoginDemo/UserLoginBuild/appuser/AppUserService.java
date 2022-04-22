@@ -37,6 +37,8 @@ public class AppUserService implements UserDetailsService {
         //check if user exits
         boolean userExits = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
         if(userExits){
+            //TODO check of attributes are the same and
+            //TODO if email not confirmed send confirmation email
             throw new IllegalAccessException("email is already taken");
         }
         //proceed
@@ -55,5 +57,10 @@ public class AppUserService implements UserDetailsService {
                 );
         confirmationTokenService.saveConfirmationToken(confirmationToken);
         return token;
+    }
+
+    public int enableAppUser(String email)
+    {
+        return appUserRepository.enableAppUser(email);
     }
 }

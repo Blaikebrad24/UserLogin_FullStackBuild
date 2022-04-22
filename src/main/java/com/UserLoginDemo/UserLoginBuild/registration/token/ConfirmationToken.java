@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Entity
 @NoArgsConstructor
+@Entity
 public class ConfirmationToken {
 
 
@@ -48,7 +48,7 @@ public class ConfirmationToken {
         this.token = token;
         this.createdAT = createdAT;
         this.expiresAT = expiresAT;
-
         this.appUser = appUser;
     }
+
 }
