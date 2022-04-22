@@ -38,6 +38,8 @@ public class AppUserService implements UserDetailsService {
         boolean userExits = appUserRepository.findByEmail(appUser.getEmail()).isPresent();
         if(userExits){
             //TODO check of attributes are the same and
+            //TODO if email not confirmed then send confirmation emai
+
             //TODO if email not confirmed send confirmation email
             throw new IllegalAccessException("email is already taken");
         }
